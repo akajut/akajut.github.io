@@ -14,6 +14,10 @@ h1, h2, h3, p {
   padding: .2em .5em;
 }
 
+li {
+  padding-right: .5em;
+}
+
 h2, h3 {
   background-color: #E7C100;
     -webkit-margin-before: 0.0em;
