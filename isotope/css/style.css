@@ -47,12 +47,28 @@ h2, h3 {
 
 .grid-item {
   float: left;
-  width: 200px;
-  height: 200px;
+  width: 210px;
+  height: 210px;
   background: #fff;
   border-top: 10px solid #eee;
   border-right: 10px solid #eee;
 }
 
-.grid-item--width2 { width: 400px; }
-.grid-item--height2 { height: 400px; }
+.grid-item--width2 { width: 420px; }
+.grid-item--height2 { height: 420px; }
+
+/* --------template ---------------------- */
+
+#JutLogo {
+  background-color: #E7C100;
+  display: inline-block;
+}
+
+#AKALogo {
+  display: inline-block;
+}
+
+#AKALogo, #JutLogo {
+  display: inline-block;
+  height: 100px;
+}
