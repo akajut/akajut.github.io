@@ -31,6 +31,8 @@ Web Development
 
 Podcasts
 ------------
+* [The Accidental Tech Podcast](http://atp.fm/)
 * [The Web Ahead](http://5by5.tv/webahead)
 * [The Big Web Show](http://5by5.tv/bigwebshow)
 * [Shop Talk Show](http://shoptalkshow.com/)
+* [The Talk Show](https://daringfireball.net/thetalkshow/)
