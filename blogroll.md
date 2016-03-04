@@ -6,6 +6,7 @@ published: true
 ---
 
 
+
 The blogs I follow currently:
 
 General Tech
@@ -27,3 +28,9 @@ Web Development
 * [Seth Godin](http://sethgodin.typepad.com/) - User experience (Non Tech)
 * [Whitney Hess](https://whitneyhess.com/blog/) - UX design
 * [David Walsh](https://davidwalsh.name/) - Web development
+
+Podcasts
+------------
+* [The Web Ahead](http://5by5.tv/webahead)
+* [The Big Web Show](http://5by5.tv/bigwebshow)
+* [Shop Talk Show](http://shoptalkshow.com/)
