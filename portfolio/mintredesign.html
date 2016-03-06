@@ -1,16 +1,1003 @@
+---
+title: null
+---
+
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mint Dashboard Redesign</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    {% if jekyll.environment == "production" %}
+
+      <script>
+        (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          },
+          i[r].l = 1 * new Date();
+          a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-70020006-1', 'auto');
+        ga('send', 'pageview');
+      </script>
+
+    {% endif %}
+
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  </head>
-  <body>
+    <style>
+      body {
+        position: relative;
+      }
+      .affix {
+        top: 20px;
+      }
+      @media screen and (max-width: 810px) {
+        #section1,
+        #section2,
+        #section3,
+        #section4,
+        #section5 {
+          /*margin-left: 100px;
+          background-color: #0c0;*/
+        }
+      }
+      .nav-pills>li.active>a,
+      .nav-pills>li.active>a:focus,
+      .nav-pills>li.active>a:hover {
+        color: black;
+        background-color: #bbb;
+      }
+      .nav-pills>li.active>a {
+        background-color: #ccc;
+      }
+      .progress-bar {
+        text-align: right;
+        padding-right: 0.25em;
+        color: #000;
+      }
+      .progress {
+        margin-bottom: 0;
+        background-color: transparent;
+      }
+      .Highlight {
+        background-color: #cce6ff;
+      }
+      table {
+        background-image: url("/portfolio/line.gif");
+        background-repeat: repeat-y;
+        background-position: -50px 0;
+      }
+      td,
+      th {
+        padding: 5px;
+        color: #999;
+      }
+      tr {
+        border-bottom: 1px solid #ccc;
+      }
+      td:nth-child(2),td:nth-child(1) {
+        padding-left: 2em;
+      }
+      tr.Longbar td:nth-child(2),tr.Longbar td:nth-child(1) {
+        padding-left: 0;
+      }
+      .Fixed {
+        background-color: #eee;
+      }
+    </style>
 
-    <div class="container"></div>
+  </head>
+  <body data-spy="scroll" data-target="#myScrollspy" data-offset="15">
+
+    <div class="container-fluid" style="background-color:#000; color:#fff;height:200px;">
+
+      <h1>Mint Dashboard Redesign</h1>
+      <p>
+        I have been a user of the personal finance site mint.com for many years. They have a very clean and tasteful design that allows the user gain insights into their spending habits. I have spent more than my fair share of time pouring over the bar
+        charts and circle graphs that the site provides, but my number one wish for their dashboard is a redesign of the the budgets widget.</p>
+    </div>
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <nav class="hidden-xs col-sm-3" id="myScrollspy">
+          <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+            <li>
+              <a href="#section1">Overview</a>
+            </li>
+            <li>
+              <a href="#section2">So What’s the Problem?</a>
+            </li>
+            <li>
+              <a href="#section3">The Two Different Types of Spending</a>
+            </li>
+            <li>
+              <a href="#section4">Back to the Problem</a>
+            </li>
+            <li>
+              <a href="#section5">The Solution</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="col-xs-12 col-sm-9">
+          <div id="section1">
+
+            <h2>Overview of the budget widget</h2>
+
+            <p>
+              The budget widget is an overview of your spending. The “Total” for the budget is the first item on the widget. Each of the budget categories are listed on the left, a bar graph of the spending is in the middle, the total of budgeted spending is
+              displayed in the “BUDGET” column, and the amount of under/over spending is in the “OVER?” column. There is also a line that shows how many days have passed for the current month so that one can determine the pace of their spending.
+            </p>
+
+            <div style="border: 2px solid #ccc; padding:5px;">
+              <span class="glyphicon glyphicon-cog" style="float:right;color: #999;font-size: 25px;margin-top:20px; "></span>
+              <h2>
+                <strong>Budgets</strong>
+                September</h2>
+
+              <table style="width:100%;">
+                <tr>
+                  <th>&nbsp;</th>
+                  <th style="width:50%;">
+                    <div style="float:right;">100%</div>0%
+                  </th>
+                  <th style="padding-left: 3em;">Budget</th>
+                  <th>Over?</th>
+                </tr>
+
+                <tr>
+                  <td>Total</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="800" aria-valuemin="0" aria-valuemax="2000" style="width:68%">
+                        $1,358.16
+                      </div>
+                    </div>
+                  </td>
+                  <td>$2,000</td>
+                  <td>$641.84 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Home</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="800" aria-valuemin="0" aria-valuemax="550" style="width:99%">
+                        $542.17
+                      </div>
+                    </div>
+                  </td>
+                  <td>$550</td>
+                  <td>$7.83 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Food &amp; Dining</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:39%">
+                        $176.33
+                      </div>
+                    </div>
+                  </td>
+                  <td>$450</td>
+                  <td>$273.67 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Cash &amp; ATM</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:32%">
+                        $80.00
+                      </div>
+                    </div>
+                  </td>
+                  <td>$250</td>
+                  <td>$170.00 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Shopping</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        $299.85
+                      </div>
+                    </div>
+                  </td>
+                  <td>$250</td>
+                  <td style="color:#d9534f;">$49.85</td>
+                </tr>
+
+                <tr>
+                  <td>Auto &amp; Transport</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:64%">
+                        $128.31
+                      </div>
+                    </div>
+                  </td>
+                  <td>$200</td>
+                  <td>$71.69 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Bills &amp; Utilities</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:26%">
+                        $32.14
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$92.86</td>
+                </tr>
+
+                <tr>
+                  <td>Groceries</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:64%">
+                        $79.49
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$45.55 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Gas &amp; Fuel</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:42%">
+                        $53.69
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$71.04 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Resturants</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:22%">
+                        $27.87
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$97.13 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Mobile Phone</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        $0
+                      </div>
+                    </div>
+                  </td>
+                  <td>$100</td>
+                  <td>$100.00 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Auto Insurance</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:97%">
+                        $48.35
+                      </div>
+                    </div>
+                  </td>
+                  <td>$50</td>
+                  <td>$3.65 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Everything Else</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        $59.31
+                      </div>
+                    </div>
+                  </td>
+                  <td>$150</td>
+                  <td>$90.69 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4">&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+          <div id="section2">
+
+            <h2>So What’s the Problem?</h2>
+
+            <p>
+              The problem I see with the widget is that the “Total” bar graph line answers the important question “How much do I have left to spend?”, but it fails to answer a different important question. “How much discretionary income do I have left to spend?”
+              The budget lumps all of one’s spending together as one, where there is really two different types of spending.
+            </p>
+
+          </div>
+          <div id="section3">
+
+            <h2>The Two Different Types of Spending</h2>
+
+            <h3>Fixed Spending</h3>
+
+            <p>
+              Spending can be broken down further into fixed and discretionary spending. Fixed spending consists of bills that recur on a monthly or annual basis and generally do not vary month to month like a home mortgage and car insurance or fluctuate within a
+              certain range such as electricity or gas in their corresponding seasons. These bills are relatively large single payments. The highlights below denote the categories that fall under fixed spending:
+            </p>
+
+            <div style="border: 2px solid #ccc; padding:5px;">
+              <span class="glyphicon glyphicon-cog" style="float:right;color: #999;font-size: 25px;margin-top:20px; "></span>
+              <h2>
+                <strong>Budgets</strong>
+                September</h2>
+
+              <table style="width:100%;">
+                <tr>
+                  <th>&nbsp;</th>
+                  <th style="width:50%;">
+                    <div style="float:right;">100%</div>0%
+                  </th>
+                  <th style="padding-left: 3em;">Budget</th>
+                  <th>Over?</th>
+                </tr>
+
+                <tr>
+                  <td>Total</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="800" aria-valuemin="0" aria-valuemax="2000" style="width:68%">
+                        $1,358.16
+                      </div>
+                    </div>
+                  </td>
+                  <td>$2,000</td>
+                  <td>$641.84 LEFT</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Home</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="800" aria-valuemin="0" aria-valuemax="550" style="width:99%">
+                        $542.17
+                      </div>
+                    </div>
+                  </td>
+                  <td>$550</td>
+                  <td>$7.83 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Food &amp; Dining</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:39%">
+                        $176.33
+                      </div>
+                    </div>
+                  </td>
+                  <td>$450</td>
+                  <td>$273.67 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Cash &amp; ATM</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:32%">
+                        $80.00
+                      </div>
+                    </div>
+                  </td>
+                  <td>$250</td>
+                  <td>$170.00 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Shopping</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        $299.85
+                      </div>
+                    </div>
+                  </td>
+                  <td>$250</td>
+                  <td style="color:#d9534f;">$49.85</td>
+                </tr>
+
+                <tr>
+                  <td>Auto &amp; Transport</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:64%">
+                        $128.31
+                      </div>
+                    </div>
+                  </td>
+                  <td>$200</td>
+                  <td>$71.69 LEFT</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Bills &amp; Utilities</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:26%">
+                        $32.14
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$92.86</td>
+                </tr>
+
+                <tr>
+                  <td>Groceries</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:64%">
+                        $79.49
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$45.55 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Gas &amp; Fuel</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:42%">
+                        $53.69
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$71.04 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Resturants</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:22%">
+                        $27.87
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$97.13 LEFT</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Mobile Phone</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        $0
+                      </div>
+                    </div>
+                  </td>
+                  <td>$100</td>
+                  <td>$100.00 LEFT</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Auto Insurance</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:97%">
+                        $48.35
+                      </div>
+                    </div>
+                  </td>
+                  <td>$50</td>
+                  <td>$3.65 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Everything Else</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        $59.31
+                      </div>
+                    </div>
+                  </td>
+                  <td>$150</td>
+                  <td>$90.69 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4">&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+
+            <h3>Discretionary Spending</h3>
+
+            <p>
+              Discretionary spending is different from fixed spending because they are generally smaller purchases that happen through the month and the user has the ability to spend more or less on these purchases according to their needs and desires. A user may
+              desire eating expensive meals and walking in order to save transportation expenses during one month and the next month they would choose to cook cheaper meals at home so that they can spend extra money on gas for a trip they have planned for the end
+              of the month. The highlights below denote the categories that fall under discretionary spending:
+            </p>
+
+            <div style="border: 2px solid #ccc; padding:5px;">
+              <span class="glyphicon glyphicon-cog" style="float:right;color: #999;font-size: 25px;margin-top:20px; "></span>
+              <h2>
+                <strong>Budgets</strong>
+                September</h2>
+
+              <table style="width:100%;">
+                <tr>
+                  <th>&nbsp;</th>
+                  <th style="width:50%;">
+                    <div style="float:right;">100%</div>0%
+                  </th>
+                  <th style="padding-left: 3em;">Budget</th>
+                  <th>Over?</th>
+                </tr>
+
+                <tr>
+                  <td>Total</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="800" aria-valuemin="0" aria-valuemax="2000" style="width:68%">
+                        $1,358.16
+                      </div>
+                    </div>
+                  </td>
+                  <td>$2,000</td>
+                  <td>$641.84 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Home</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="800" aria-valuemin="0" aria-valuemax="550" style="width:99%">
+                        $542.17
+                      </div>
+                    </div>
+                  </td>
+                  <td>$550</td>
+                  <td>$7.83 LEFT</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Food &amp; Dining</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:39%">
+                        $176.33
+                      </div>
+                    </div>
+                  </td>
+                  <td>$450</td>
+                  <td>$273.67 LEFT</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Cash &amp; ATM</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:32%">
+                        $80.00
+                      </div>
+                    </div>
+                  </td>
+                  <td>$250</td>
+                  <td>$170.00 LEFT</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Shopping</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        $299.85
+                      </div>
+                    </div>
+                  </td>
+                  <td>$250</td>
+                  <td style="color:#d9534f;">$49.85</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Auto &amp; Transport</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:64%">
+                        $128.31
+                      </div>
+                    </div>
+                  </td>
+                  <td>$200</td>
+                  <td>$71.69 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Bills &amp; Utilities</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:26%">
+                        $32.14
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$92.86</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Groceries</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:64%">
+                        $79.49
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$45.55 LEFT</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Gas &amp; Fuel</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:42%">
+                        $53.69
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$71.04 LEFT</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Resturants</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:22%">
+                        $27.87
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$97.13 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Mobile Phone</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        $0
+                      </div>
+                    </div>
+                  </td>
+                  <td>$100</td>
+                  <td>$100.00 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Auto Insurance</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:97%">
+                        $48.35
+                      </div>
+                    </div>
+                  </td>
+                  <td>$50</td>
+                  <td>$3.65 LEFT</td>
+                </tr>
+
+                <tr class="Highlight">
+                  <td>Everything Else</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        $59.31
+                      </div>
+                    </div>
+                  </td>
+                  <td>$150</td>
+                  <td>$90.69 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4">&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+          <div id="section4">
+
+            <h2>Back to the Problem</h2>
+
+            <p>
+              The problem is that the “Total” graph line and the line that shows the days past in the month can be very easily distorted due to the various once a month fixed spending items. For example if your mortgage is due at the beginning or end of the month,
+              the “Total” line jumps far ahead or behind the days past line and the user then has to add up all of the fixed spending that still is yet to come in their head.
+            </p>
+
+          </div>
+          <div id="section5">
+
+            <h2>The Solution</h2>
+
+            <p>
+              My solution would be to keep all the items in the widget and include user customizable sub sections that could be used to categorize fixed and discretionary spending. Each of the sub sections would have their own “Total” spending graph line that
+              users could quickly see the pace of their spending and make informed decisions about what they can or can not afford.
+            </p>
+
+            <div style="border: 2px solid #ccc; padding:5px;">
+              <span class="glyphicon glyphicon-cog" style="float:right;color: #999;font-size: 25px;margin-top:20px; "></span>
+              <h2>
+                <strong>Budgets</strong>
+                September</h2>
+
+              <table style="width:100%;">
+                <tr>
+                  <th>&nbsp;</th>
+                  <th style="width:50%;">
+                    <div style="float:right;">100%</div>0%
+                  </th>
+                  <th style="padding-left: 3em;">Budget</th>
+                  <th>Over?</th>
+                </tr>
+
+                <tr class="Longbar">
+                  <td>Total</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="800" aria-valuemin="0" aria-valuemax="2000" style="width:68%">
+                        $1,358.16
+                      </div>
+                    </div>
+                  </td>
+                  <td>$2,000</td>
+                  <td>$641.84 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4">&nbsp;</td>
+                </tr>
+
+                <tr class="Longbar Fixed">
+                  <td>Fixed</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="800" aria-valuemin="0" aria-valuemax="550" style="width:75%">
+                        $622.66
+                      </div>
+                    </div>
+                  </td>
+                  <td>$825</td>
+                  <td>$202.34 LEFT</td>
+                </tr>
+
+                <tr class="Fixed">
+                  <td>Home</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="800" aria-valuemin="0" aria-valuemax="550" style="width:99%">
+                        $542.17
+                      </div>
+                    </div>
+                  </td>
+                  <td>$550</td>
+                  <td>$7.83 LEFT</td>
+                </tr>
+
+                <tr class="Fixed">
+                  <td>Bills &amp; Utilities</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:26%">
+                        $32.14
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$92.86</td>
+                </tr>
+
+                <tr class="Fixed">
+                  <td>Mobile Phone</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                        $0
+                      </div>
+                    </div>
+                  </td>
+                  <td>$100</td>
+                  <td>$100.00 LEFT</td>
+                </tr>
+
+                <tr class="Fixed">
+                  <td>Auto Insurance</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:97%">
+                        $48.35
+                      </div>
+                    </div>
+                  </td>
+                  <td>$50</td>
+                  <td>$3.65 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4">&nbsp;</td>
+                </tr>
+
+                <tr class="Longbar">
+                  <td>Discretionary</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="800" aria-valuemin="0" aria-valuemax="550" style="width:57%">
+                        $743.80
+                      </div>
+                    </div>
+                  </td>
+                  <td>$1300</td>
+                  <td>$556.20 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Food &amp; Dining</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:39%">
+                        $176.33
+                      </div>
+                    </div>
+                  </td>
+                  <td>$450</td>
+                  <td>$273.67 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Cash &amp; ATM</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:32%">
+                        $80.00
+                      </div>
+                    </div>
+                  </td>
+                  <td>$250</td>
+                  <td>$170.00 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Shopping</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                        $299.85
+                      </div>
+                    </div>
+                  </td>
+                  <td>$250</td>
+                  <td style="color:#d9534f;">$49.85</td>
+                </tr>
+
+                <tr>
+                  <td>Auto &amp; Transport</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:64%">
+                        $128.31
+                      </div>
+                    </div>
+                  </td>
+                  <td>$200</td>
+                  <td>$71.69 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Groceries</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:64%">
+                        $79.49
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$45.55 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Gas &amp; Fuel</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:42%">
+                        $53.69
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$71.04 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Resturants</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:22%">
+                        $27.87
+                      </div>
+                    </div>
+                  </td>
+                  <td>$125</td>
+                  <td>$97.13 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td>Everything Else</td>
+                  <td>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        $59.31
+                      </div>
+                    </div>
+                  </td>
+                  <td>$150</td>
+                  <td>$90.69 LEFT</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4">&nbsp;</td>
+                </tr>
+              </table>
+            </div>
+
+          </div>
+          <div class="container-fluid" style="height:200px;">
+            &nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
 
   </body>
+
 </html>
