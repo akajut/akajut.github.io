@@ -43,6 +43,7 @@ title: null
       }
       .affix {
         top: 20px;
+        background-color: #900;
       }
       @media screen and (max-width: 810px) {
         #section1,
@@ -63,6 +64,10 @@ title: null
       .nav-pills>li.active>a {
         background-color: #ccc;
       }
+      .nav-pills li {
+        width: 10em;
+      }
+
       .progress-bar {
         text-align: right;
         padding-right: 0.25em;
@@ -72,13 +77,13 @@ title: null
         margin-bottom: 0;
         background-color: transparent;
       }
-      .Highlight {
-        background-color: #cce6ff;
+      .highlight {
+        background-color: rgba(204, 230, 255, 0.5);
       }
       table {
         background-image: url("/portfolio/line.gif");
         background-repeat: repeat-y;
-        background-position: -50px 0;
+        background-position: -100px 0;
       }
       td,
       th {
@@ -91,13 +96,20 @@ title: null
       td:nth-child(2),td:nth-child(1) {
         padding-left: 2em;
       }
-      tr.Longbar td:nth-child(2),tr.Longbar td:nth-child(1) {
-        padding-left: 0;
+      tr.Longbar td:nth-child(1) {
+        padding-left: 1em;
       }
       .Fixed {
         background-color: #eee;
+        background-color: rgba(204, 204, 204, 0.5);
       }
     </style>
+    <script type="">
+    $(function() {
+        var $affixElement = $('div[data-spy="affix"]');
+        $affixElement.width($affixElement.parent().width());
+    });
+    </script>
 
   </head>
   <body data-spy="scroll" data-target="#myScrollspy" data-offset="15">
@@ -132,14 +144,13 @@ title: null
             </li>
           </ul>
         </nav>
-        <div class="col-xs-12 col-sm-9">
+        <div class="col-xs-12 col-sm-9 col-md-offset-1">
           <div id="section1">
 
             <h2>Overview of the budget widget</h2>
 
             <p>
-              The budget widget is an overview of your spending. The “Total” for the budget is the first item on the widget. Each of the budget categories are listed on the left, a bar graph of the spending is in the middle, the total of budgeted spending is
-              displayed in the “BUDGET” column, and the amount of under/over spending is in the “OVER?” column. There is also a line that shows how many days have passed for the current month so that one can determine the pace of their spending.
+              The budget widget is an overview of your spending. The “Total” for the budget is the first item on the widget. Each of the budget categories are listed on the left, a bar graph of the spending is in the middle, the total of budgeted spending is displayed in the “BUDGET” column, and the amount of under/over spending is in the “OVER?” column. There is also a line that shows how many days have passed for the current month so that one can determine the pace of their spending.
             </p>
 
             <div style="border: 2px solid #ccc; padding:5px;">
@@ -384,7 +395,7 @@ title: null
                   <td>$641.84 LEFT</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Home</td>
                   <td>
                     <div class="progress">
@@ -449,7 +460,7 @@ title: null
                   <td>$71.69 LEFT</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Bills &amp; Utilities</td>
                   <td>
                     <div class="progress">
@@ -501,7 +512,7 @@ title: null
                   <td>$97.13 LEFT</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Mobile Phone</td>
                   <td>
                     <div class="progress">
@@ -514,7 +525,7 @@ title: null
                   <td>$100.00 LEFT</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Auto Insurance</td>
                   <td>
                     <div class="progress">
@@ -596,7 +607,7 @@ title: null
                   <td>$7.83 LEFT</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Food &amp; Dining</td>
                   <td>
                     <div class="progress">
@@ -609,7 +620,7 @@ title: null
                   <td>$273.67 LEFT</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Cash &amp; ATM</td>
                   <td>
                     <div class="progress">
@@ -622,7 +633,7 @@ title: null
                   <td>$170.00 LEFT</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Shopping</td>
                   <td>
                     <div class="progress">
@@ -635,7 +646,7 @@ title: null
                   <td style="color:#d9534f;">$49.85</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Auto &amp; Transport</td>
                   <td>
                     <div class="progress">
@@ -661,7 +672,7 @@ title: null
                   <td>$92.86</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Groceries</td>
                   <td>
                     <div class="progress">
@@ -674,7 +685,7 @@ title: null
                   <td>$45.55 LEFT</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Gas &amp; Fuel</td>
                   <td>
                     <div class="progress">
@@ -687,7 +698,7 @@ title: null
                   <td>$71.04 LEFT</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Resturants</td>
                   <td>
                     <div class="progress">
@@ -726,7 +737,7 @@ title: null
                   <td>$3.65 LEFT</td>
                 </tr>
 
-                <tr class="Highlight">
+                <tr class="highlight">
                   <td>Everything Else</td>
                   <td>
                     <div class="progress">
