@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Blog Roll
-permalink: /blogroll/
+title: Keeping Up
+permalink: /keeping-up/
 published: true
 ---
 
 
 
-The blogs I follow currently:
+The blogs and podcasts I follow currently:
 
 General Tech
 -----------
@@ -26,11 +26,11 @@ Web Development
   * [Eric Elliot](https://medium.com/@_ericelliott) - JavaScript
 * [Smashing Magazine](https://www.smashingmagazine.com/) - Web development
 * [Seth Godin](http://sethgodin.typepad.com/) - User experience (Non Tech)
-* [Whitney Hess](https://whitneyhess.com/blog/) - UX design
 * [David Walsh](https://davidwalsh.name/) - Web development
 
 Podcasts
 ------------
+* [JavaScript Jabber](https://devchat.tv/js-jabber)
 * [The Accidental Tech Podcast](http://atp.fm/)
 * [The Web Ahead](http://5by5.tv/webahead)
 * [The Big Web Show](http://5by5.tv/bigwebshow)
