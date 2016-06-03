@@ -47,3 +47,11 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+.striped td {
+   padding: .25em;
+}
+
+.striped tr:nth-child(odd) {
+   background-color: #ddd;
+}
